@@ -23,7 +23,7 @@ export function showRendererList(list) {
 
 export function getWebGLContext(elementID) {
     const canvas = document.getElementById(elementID);
-    const gl = canvas.getContext("webgl");
+    const gl = canvas.getContext("webgl"); // todo: 在这里更新Canvas的大小，考虑副作用
     return gl;
 }
 

@@ -8,7 +8,7 @@
 export function initShaders(gl, vshader, fshader) {
     var program = createProgram(gl, vshader, fshader);
     if (!program) {
-        console.log('无法创建程序对象 1');
+        console.log("无法创建程序对象 1");
         return false;
     }
 
@@ -50,7 +50,7 @@ function createProgram(gl, vshader, fshader) {
     var linked = gl.getProgramParameter(program, gl.LINK_STATUS);
     if (!linked) {
         var error = gl.getProgramInfoLog(program);
-        console.log('无法连接程序对象: 2 ' + error);
+        console.log("无法连接程序对象: 2 " + error);
         gl.deleteProgram(program);
         gl.deleteShader(fragmentShader);
         gl.deleteShader(vertexShader);
@@ -70,7 +70,7 @@ function loadShader(gl, type, source) {
     // 创建着色器对象
     var shader = gl.createShader(type);
     if (shader == null) {
-        console.log('无法创建着色器 3');
+        console.log("无法创建着色器 3");
         return null;
     }
 
@@ -84,7 +84,7 @@ function loadShader(gl, type, source) {
     var compiled = gl.getShaderParameter(shader, gl.COMPILE_STATUS);
     if (!compiled) {
         var error = gl.getShaderInfoLog(shader);
-        console.log('Failed to compile shader: 4' + error);
+        console.log("Failed to compile shader: 4" + error);
         gl.deleteShader(shader);
         return null;
     }

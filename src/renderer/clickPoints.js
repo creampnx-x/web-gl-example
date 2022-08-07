@@ -10,25 +10,27 @@ import {
 
 export const clickPoints = function (gl) {
     const pointShader = `
-      attribute vec4 DynamicPosition;
-      void main() {
-          gl_Position = DynamicPosition;
-          gl_PointSize = 10.0;
-      }
-    `;
+    attribute vec4 DynamicPosition;
+    void main() {
+        gl_Position = DynamicPosition;
+        gl_PointSize = 10.0;
+    }
+  `;
 
     const fragmentShader = `
-      void main() {
-          gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
-      }
-    `;
+    void main() {
+        gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+    }
+  `;
 
     if (!initShaders(gl, pointShader, fragmentShader))
         throw new Error("can not create program, please check your shader");
 
     clearBackground(gl);
 
-    document.onclick = e => {
+    const clickedPoints = [];
+
+    document.onclick = (e) => {
         const pointLocation = gl.getAttribLocation(gl.program, "DynamicPosition");
         const point = convertClientToWebGLPosition(
             e.clientX,
@@ -37,9 +39,11 @@ export const clickPoints = function (gl) {
             gl.canvas.getBoundingClientRect()
         );
 
-        gl.vertexAttrib3f(pointLocation, point.x, point.y, point.z);
-
+        clickedPoints.push(point);
         clearBackground(gl);
-        gl.drawArrays(gl.POINTS, 0, 1);
-    }
-}
+        for (let i=0; i<clickedPoints.length; i++) {
+            gl.vertexAttrib3f(pointLocation, clickedPoints[i].x, clickedPoints[i].y, clickedPoints[i].z);
+            gl.drawArrays(gl.POINTS, 0, 1);
+        }
+    };
+};

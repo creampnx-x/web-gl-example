@@ -21,4 +21,4 @@ export const point = function(gl) {
     clearBackground(gl);
 
     gl.drawArrays(gl.POINTS, 0, 1);
-}
+};
