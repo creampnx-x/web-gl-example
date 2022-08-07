@@ -3,13 +3,19 @@ import { clearBackground } from "./clearBackground";
 import { clickPoint } from "./clickPoint";
 import { clickPoints } from "./clickPoints";
 import { showRendererList } from "../util";
+import { drawPointsUseBuffer } from "./drawPointsUseBuffer";
+import { triangle } from "./triangle";
+import { rotateTriangleUseMatrix } from "./rotateTriangleUseMatrix";
 
 
 const renderer = {
     clearBackground,
     point,
     clickPoint,
-    clickPoints
+    clickPoints,
+    drawPointsUseBuffer,
+    triangle,
+    rotateTriangleUseMatrix
 };
 
 const rendererList = Object.keys(renderer);
