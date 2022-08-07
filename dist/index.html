@@ -7,19 +7,28 @@
 </head>
 
 <body>
-  <canvas id="canvas" width="400" height="400"></canvas>
+  <div style="display: flex;justify-content: space-around;">
+    <canvas id="canvas" width="400" height="400"></canvas>
 
-  <h2> render name list </h2>
-  <ul id="renderer-list"></ul>
+    <div>
+      <h2> Render name list </h2>
+      <ol id="renderer-list"></ol>
+    </div>
 
-  <h2> tips </h2>
-  <div>
-    the URL be like: <br />
-    { href }?which={render name} <br />
-    for example: localhost:8080?which=point
+    <div>
+      <h2> Tips </h2>
+      <div>
+        the URL be like: <br />
+        { href }?which={render name} <br />
+        for example: localhost:8080?which=point
+      </div>
+    </div>
+
+    <div>
+      <h2> Debug </h2>
+      <div id="show-error">nothing wrong now.</div>
+    </div>
   </div>
-
-  <div id="show-error">nothing wrong now.</div>
   <script src="index.js"></script>
   <script src="runtime.js"></script>
 </body>
