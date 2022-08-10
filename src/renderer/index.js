@@ -7,6 +7,8 @@ import { drawPointsUseBuffer } from "./drawPointsUseBuffer";
 import { triangle } from "./triangle";
 import { rotateTriangleUseMatrix } from "./rotateTriangleUseMatrix";
 import { rotateTriangleAnimation } from "./rotateTriangleAnimation";
+import { colorfulPoints } from "./colorfulPoints";
+import { colorfulTriangle } from "./colorfulTriangle";
 
 
 const renderer = {
@@ -17,7 +19,9 @@ const renderer = {
     drawPointsUseBuffer,
     triangle,
     rotateTriangleUseMatrix,
-    rotateTriangleAnimation
+    rotateTriangleAnimation,
+    colorfulPoints,
+    colorfulTriangle,
 };
 
 const rendererList = Object.keys(renderer);
