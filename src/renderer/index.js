@@ -9,6 +9,7 @@ import { rotateTriangleUseMatrix } from "./rotateTriangleUseMatrix";
 import { rotateTriangleAnimation } from "./rotateTriangleAnimation";
 import { colorfulPoints } from "./colorfulPoints";
 import { colorfulTriangle } from "./colorfulTriangle";
+import { texture } from "./texture";
 
 
 const renderer = {
@@ -22,6 +23,7 @@ const renderer = {
     rotateTriangleAnimation,
     colorfulPoints,
     colorfulTriangle,
+    texture
 };
 
 const rendererList = Object.keys(renderer);
