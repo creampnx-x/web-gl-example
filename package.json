@@ -16,7 +16,7 @@
   "scripts": {
     "build": "webpack --mode=production",
     "dev": "webpack --mode=development --watch",
-    "start": "webpack serve --open",
+    "start": "yarn build & webpack serve --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
